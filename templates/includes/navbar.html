@@ -1,0 +1,27 @@
+{% load static %}
+<header class="header navbar-fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="menu-container js_nav-item">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="toggle-icon"></span>
+                </button>
+                <div class="logo">
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse nav-collapse">
+                <div class="menu-container">
+                    <ul class="nav navbar-nav navbar-nav-right">
+                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="/">Home</a></li>
+                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="/contact/">Contact</a></li>
+                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="https://www.linkedin.com/in/edizuzun/" target="_blank">LinkedIn</a></li>
+                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="https://github.com/edizuzunn" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

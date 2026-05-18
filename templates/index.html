@@ -1,0 +1,256 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+        <!--========== SLIDER ==========-->
+        <div class="promo-block" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="promo-block-divider">
+                            <h1 class="promo-block-title">{{ home_banner_name|default:"Ediz Uzun" }}</h1>
+                            <p class="promo-block-text">{{ home_banner_title|default:"Information System Engineer" }}</p>
+                        </div>
+                        <ul class="list-inline">
+                            <li><a href="https://www.linkedin.com/in/edizuzun/" target="_blank" class="social-icons"><i class="icon-social-linkedin"></i></a></li>
+                            <li><a href="https://github.com/edizuzunn" target="_blank" class="social-icons"><i class="icon-social-github"></i></a></li>
+                            <li><a href="mailto:edizuzun66@gmail.com" class="social-icons"><i class="icon-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== END SLIDER ==========-->
+
+        <!-- About -->
+        <div id="about">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">About</h2>
+                            <p>Who I am.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="row margin-b-60">
+                            <div class="col-sm-4 sm-margin-b-30">
+                                <img src="{% get_media_prefix %}img/vesikalik.jpg" alt="Ediz Uzun" class="img-responsive" style="border-radius: 50%; max-width: 200px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                            </div>
+                            <div class="col-sm-8">
+                                <p>{{ home_banner_description|default:"Information System Engineering student at Piri Reis University. Experienced in frontend development with React.js and backend development with Python/Django. Passionate about building modern web applications and AI technologies." }}</p>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;"><i class="icon-location-pin" style="margin-right: 10px; color: #72c2ff;"></i> İstanbul, Türkiye</li>
+                                    <li style="margin-bottom: 8px;"><i class="icon-envelope" style="margin-right: 10px; color: #72c2ff;"></i> <a href="mailto:edizuzun66@gmail.com">edizuzun66@gmail.com</a></li>
+                                    <li style="margin-bottom: 8px;"><i class="icon-graduation" style="margin-right: 10px; color: #72c2ff;"></i> Piri Reis Üniversitesi</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Progress Box -->
+                        <div class="progress-box">
+                            <h5>Python <span class="color-heading pull-right">85%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>React.js <span class="color-heading pull-right">80%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>Django <span class="color-heading pull-right">75%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>HTML5/CSS3 <span class="color-heading pull-right">85%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <h5>Deep Learning <span class="color-heading pull-right">60%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+                            </div>
+                        </div>
+                        <!-- End Progress Box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About -->
+
+        <!-- Experience -->
+        <div id="experience">
+            <div class="bg-color-sky-light" data-auto-height="true">
+                <div class="container content-lg">
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Experience</h2>
+                                <p>My professional journey.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="row row-space-2 margin-b-4">
+                                <div class="col-md-6 md-margin-b-4">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-screen-desktop"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>Frontend Developer Intern</h3>
+                                            <h5 style="color: #72c2ff; margin-bottom: 5px;">Jotform</h5>
+                                            <p class="margin-b-5" style="font-size: 13px; color: #999;">Ağu 2025 - Eyl 2025 · Ankara</p>
+                                            <p class="margin-b-5">Contributed to the development of Jotform AI Chatbot, a new product integration for Canva. Built with React.js.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 md-margin-b-4">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-screen-tablet"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>Frontend Developer Intern</h3>
+                                            <h5 style="color: #72c2ff; margin-bottom: 5px;">SmartICT Bilişim A.Ş.</h5>
+                                            <p class="margin-b-5" style="font-size: 13px; color: #999;">Tem 2025 - Ağu 2025 · Ankara</p>
+                                            <p class="margin-b-5">Actively participated in frontend development processes. Contributed to the development of dynamic web applications with React.js.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Experience -->
+
+        <!-- Education -->
+        <div id="education">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Education</h2>
+                            <p>Academic background.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="row row-space-2">
+                            <div class="col-md-12">
+                                <div class="service" data-height="height">
+                                    <div class="service-element">
+                                        <i class="service-icon icon-graduation"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3>Piri Reis Üniversitesi</h3>
+                                        <h5 style="color: #72c2ff; margin-bottom: 5px;">Bilişim Sistemleri Mühendisliği (İngilizce)</h5>
+                                        <p class="margin-b-5" style="font-size: 13px; color: #999;">Eki 2022 - Haz 2027 · Lisans Derecesi</p>
+                                        <p class="margin-b-5"><strong>Skills:</strong> Python, Deep Learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Education -->
+
+        <!-- Projects -->
+        <div id="work">
+            <div class="bg-color-sky-light">
+                <div class="container content-lg">
+                    <div class="row">
+                        <div class="col-sm-3 sm-margin-b-30">
+                            <div class="text-right sm-text-left">
+                                <h2 class="margin-b-0">Projects</h2>
+                                <p>My GitHub repos.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="row row-space-2">
+                                <div class="col-md-6 md-margin-b-4">
+                                    <a href="https://github.com/edizuzunn/League-Point-Table-Calculator" target="_blank" style="text-decoration: none; color: inherit;">
+                                        <div class="service" data-height="height" style="cursor: pointer; transition: transform 0.2s; border-left: 4px solid #72c2ff;">
+                                            <div class="service-element">
+                                                <i class="service-icon icon-trophy"></i>
+                                            </div>
+                                            <div class="service-info">
+                                                <h3>League Point Table Calculator</h3>
+                                                <p class="margin-b-5">A calculator for league point tables. Built to manage and calculate standings for sports leagues.</p>
+                                                <span style="color: #72c2ff; font-size: 13px;"><i class="icon-social-github" style="margin-right: 5px;"></i> View on GitHub →</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 md-margin-b-4">
+                                    <a href="https://github.com/edizuzunn/Specific-Language-Translation" target="_blank" style="text-decoration: none; color: inherit;">
+                                        <div class="service" data-height="height" style="cursor: pointer; transition: transform 0.2s; border-left: 4px solid #72c2ff;">
+                                            <div class="service-element">
+                                                <i class="service-icon icon-globe"></i>
+                                            </div>
+                                            <div class="service-info">
+                                                <h3>Specific Language Translation</h3>
+                                                <p class="margin-b-5">A language translation tool for specific language pairs. Built with modern web technologies.</p>
+                                                <span style="color: #72c2ff; font-size: 13px;"><i class="icon-social-github" style="margin-right: 5px;"></i> View on GitHub →</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Projects -->
+
+        <!-- Languages -->
+        <div id="languages">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Languages</h2>
+                            <p>Communication.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="row">
+                            <div class="col-md-6 md-margin-b-4">
+                                <div class="service" data-height="height">
+                                    <div class="service-element">
+                                        <i class="service-icon icon-speech"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3>Türkçe</h3>
+                                        <p class="margin-b-5">Ana dil</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                                    <div class="service-element">
+                                        <i class="service-icon color-white icon-globe"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3 class="color-white">English</h3>
+                                        <p class="color-white margin-b-5">Professional Working Proficiency</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Languages -->
+{% endblock %}
