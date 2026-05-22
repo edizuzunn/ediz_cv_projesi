@@ -47,38 +47,49 @@
                             </div>
                         </div>
 
-                        <!-- Progress Box -->
-                        <div class="progress-box">
-                            <h5>Python <span class="color-heading pull-right">85%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                        <!-- Skills (Progress Box) -->
+                        {% if skills %}
+                            {% for skill in skills %}
+                            <div class="progress-box">
+                                <h5>{{ skill.name }} <span class="color-heading pull-right">{{ skill.percentage }}%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skill.percentage }}"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="progress-box">
-                            <h5>React.js <span class="color-heading pull-right">80%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="80"></div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="progress-box">
+                                <h5>Python <span class="color-heading pull-right">85%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="progress-box">
-                            <h5>Django <span class="color-heading pull-right">75%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="75"></div>
+                            <div class="progress-box">
+                                <h5>React.js <span class="color-heading pull-right">80%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="80"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="progress-box">
-                            <h5>HTML5/CSS3 <span class="color-heading pull-right">85%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                            <div class="progress-box">
+                                <h5>Django <span class="color-heading pull-right">75%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="75"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="progress-box">
-                            <h5>Deep Learning <span class="color-heading pull-right">60%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+                            <div class="progress-box">
+                                <h5>HTML5/CSS3 <span class="color-heading pull-right">85%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- End Progress Box -->
+                            <div class="progress-box">
+                                <h5>Deep Learning <span class="color-heading pull-right">60%</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <!-- End Skills -->
                     </div>
                 </div>
             </div>
@@ -98,32 +109,27 @@
                         </div>
                         <div class="col-sm-8 col-sm-offset-1">
                             <div class="row row-space-2 margin-b-4">
-                                <div class="col-md-6 md-margin-b-4">
-                                    <div class="service" data-height="height">
-                                        <div class="service-element">
-                                            <i class="service-icon icon-screen-desktop"></i>
-                                        </div>
-                                        <div class="service-info">
-                                            <h3>Frontend Developer Intern</h3>
-                                            <h5 style="color: #72c2ff; margin-bottom: 5px;">Jotform</h5>
-                                            <p class="margin-b-5" style="font-size: 13px; color: #999;">Ağu 2025 - Eyl 2025 · Ankara</p>
-                                            <p class="margin-b-5">Contributed to the development of Jotform AI Chatbot, a new product integration for Canva. Built with React.js.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 md-margin-b-4">
-                                    <div class="service" data-height="height">
-                                        <div class="service-element">
-                                            <i class="service-icon icon-screen-tablet"></i>
-                                        </div>
-                                        <div class="service-info">
-                                            <h3>Frontend Developer Intern</h3>
-                                            <h5 style="color: #72c2ff; margin-bottom: 5px;">SmartICT Bilişim A.Ş.</h5>
-                                            <p class="margin-b-5" style="font-size: 13px; color: #999;">Tem 2025 - Ağu 2025 · Ankara</p>
-                                            <p class="margin-b-5">Actively participated in frontend development processes. Contributed to the development of dynamic web applications with React.js.</p>
+                                {% if experiences %}
+                                    {% for exp in experiences %}
+                                    <div class="col-md-6 md-margin-b-4">
+                                        <div class="service" data-height="height">
+                                            <div class="service-element">
+                                                <i class="service-icon {{ exp.icon }}"></i>
+                                            </div>
+                                            <div class="service-info">
+                                                <h3>{{ exp.title }}</h3>
+                                                <h5 style="color: #72c2ff; margin-bottom: 5px;">{{ exp.company }}</h5>
+                                                <p class="margin-b-5" style="font-size: 13px; color: #999;">{{ exp.date_range }}</p>
+                                                <p class="margin-b-5">{{ exp.description }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-md-12">
+                                        <p style="color: #999;">Admin panelinden deneyim ekleyebilirsiniz.</p>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -144,19 +150,29 @@
                     </div>
                     <div class="col-sm-8 col-sm-offset-1">
                         <div class="row row-space-2">
-                            <div class="col-md-12">
-                                <div class="service" data-height="height">
-                                    <div class="service-element">
-                                        <i class="service-icon icon-graduation"></i>
-                                    </div>
-                                    <div class="service-info">
-                                        <h3>Piri Reis Üniversitesi</h3>
-                                        <h5 style="color: #72c2ff; margin-bottom: 5px;">Bilişim Sistemleri Mühendisliği (İngilizce)</h5>
-                                        <p class="margin-b-5" style="font-size: 13px; color: #999;">Eki 2022 - Haz 2027 · Lisans Derecesi</p>
-                                        <p class="margin-b-5"><strong>Skills:</strong> Python, Deep Learning</p>
+                            {% if educations %}
+                                {% for edu in educations %}
+                                <div class="col-md-12 md-margin-b-4">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-graduation"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>{{ edu.school }}</h3>
+                                            <h5 style="color: #72c2ff; margin-bottom: 5px;">{{ edu.department }}</h5>
+                                            <p class="margin-b-5" style="font-size: 13px; color: #999;">{{ edu.date_range }}</p>
+                                            {% if edu.skills %}
+                                                <p class="margin-b-5"><strong>Skills:</strong> {{ edu.skills }}</p>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="col-md-12">
+                                    <p style="color: #999;">Admin panelinden eğitim bilgisi ekleyebilirsiniz.</p>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -177,34 +193,28 @@
                         </div>
                         <div class="col-sm-8 col-sm-offset-1">
                             <div class="row row-space-2">
-                                <div class="col-md-6 md-margin-b-4">
-                                    <a href="https://github.com/edizuzunn/League-Point-Table-Calculator" target="_blank" style="text-decoration: none; color: inherit;">
-                                        <div class="service" data-height="height" style="cursor: pointer; transition: transform 0.2s; border-left: 4px solid #72c2ff;">
-                                            <div class="service-element">
-                                                <i class="service-icon icon-trophy"></i>
+                                {% if projects %}
+                                    {% for project in projects %}
+                                    <div class="col-md-6 md-margin-b-4">
+                                        <a href="{{ project.github_url }}" target="_blank" style="text-decoration: none; color: inherit;">
+                                            <div class="service" data-height="height" style="cursor: pointer; transition: transform 0.2s; border-left: 4px solid #72c2ff;">
+                                                <div class="service-element">
+                                                    <i class="service-icon {{ project.icon }}"></i>
+                                                </div>
+                                                <div class="service-info">
+                                                    <h3>{{ project.title }}</h3>
+                                                    <p class="margin-b-5">{{ project.description }}</p>
+                                                    <span style="color: #72c2ff; font-size: 13px;"><i class="icon-social-github" style="margin-right: 5px;"></i> View on GitHub →</span>
+                                                </div>
                                             </div>
-                                            <div class="service-info">
-                                                <h3>League Point Table Calculator</h3>
-                                                <p class="margin-b-5">A calculator for league point tables. Built to manage and calculate standings for sports leagues.</p>
-                                                <span style="color: #72c2ff; font-size: 13px;"><i class="icon-social-github" style="margin-right: 5px;"></i> View on GitHub →</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 md-margin-b-4">
-                                    <a href="https://github.com/edizuzunn/Specific-Language-Translation" target="_blank" style="text-decoration: none; color: inherit;">
-                                        <div class="service" data-height="height" style="cursor: pointer; transition: transform 0.2s; border-left: 4px solid #72c2ff;">
-                                            <div class="service-element">
-                                                <i class="service-icon icon-globe"></i>
-                                            </div>
-                                            <div class="service-info">
-                                                <h3>Specific Language Translation</h3>
-                                                <p class="margin-b-5">A language translation tool for specific language pairs. Built with modern web technologies.</p>
-                                                <span style="color: #72c2ff; font-size: 13px;"><i class="icon-social-github" style="margin-right: 5px;"></i> View on GitHub →</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-md-12">
+                                        <p style="color: #999;">Admin panelinden proje ekleyebilirsiniz.</p>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -225,28 +235,37 @@
                     </div>
                     <div class="col-sm-8 col-sm-offset-1">
                         <div class="row">
-                            <div class="col-md-6 md-margin-b-4">
-                                <div class="service" data-height="height">
-                                    <div class="service-element">
-                                        <i class="service-icon icon-speech"></i>
+                            {% if languages %}
+                                {% for lang in languages %}
+                                <div class="col-md-6 md-margin-b-4">
+                                    {% if lang.is_highlighted %}
+                                    <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                                        <div class="service-element">
+                                            <i class="service-icon color-white {{ lang.icon }}"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3 class="color-white">{{ lang.name }}</h3>
+                                            <p class="color-white margin-b-5">{{ lang.level }}</p>
+                                        </div>
                                     </div>
-                                    <div class="service-info">
-                                        <h3>Türkçe</h3>
-                                        <p class="margin-b-5">Ana dil</p>
+                                    {% else %}
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon {{ lang.icon }}"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>{{ lang.name }}</h3>
+                                            <p class="margin-b-5">{{ lang.level }}</p>
+                                        </div>
                                     </div>
+                                    {% endif %}
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
-                                    <div class="service-element">
-                                        <i class="service-icon color-white icon-globe"></i>
-                                    </div>
-                                    <div class="service-info">
-                                        <h3 class="color-white">English</h3>
-                                        <p class="color-white margin-b-5">Professional Working Proficiency</p>
-                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="col-md-12">
+                                    <p style="color: #999;">Admin panelinden dil bilgisi ekleyebilirsiniz.</p>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
