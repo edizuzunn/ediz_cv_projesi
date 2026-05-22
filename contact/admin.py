@@ -12,3 +12,13 @@ class GeneralSettingAdmin(admin.ModelAdmin):
 
     class Meta:
         model = GeneralSetting
+
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'email', 'subject', 'message', 'created_date']
+    search_fields = ['name', 'email', 'subject', 'message']
+    readonly_fields = ['name', 'email', 'subject', 'message']
+
+    class Meta:
+        model = ContactMessage

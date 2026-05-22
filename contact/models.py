@@ -47,3 +47,33 @@ class GeneralSetting(AbstractModel):
         verbose_name = 'General Setting'
         verbose_name_plural = 'General Settings'
         ordering = ('name',)
+
+class ContactMessage(AbstractModel):
+    name = models.CharField(
+        max_length=254,
+        blank=True,
+        verbose_name='Name',
+    )
+    email = models.EmailField(
+        max_length=254,
+        blank=True,
+        verbose_name='Email',
+    )
+    subject = models.CharField(
+        max_length=254,
+        blank=True,
+        verbose_name='Subject',
+    )
+    message = models.TextField(
+        blank=True,
+        verbose_name='Message',
+    )
+
+    def __str__(self):
+        return f'Message from {self.name} - {self.subject}'
+
+    class Meta:
+        verbose_name = 'Contact Message'
+        verbose_name_plural = 'Contact Messages'
+        ordering = ('-created_date',)
+

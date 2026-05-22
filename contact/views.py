@@ -36,4 +36,22 @@ def index(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    success = False
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        ContactMessage.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+        success = True
+
+    context = {
+        'success': success,
+    }
+    return render(request, 'contact.html', context)

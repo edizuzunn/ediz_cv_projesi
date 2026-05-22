@@ -34,25 +34,32 @@
                             </div>
 
                             <!-- Contact Form -->
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6 margin-b-20">
-                                        <input type="text" class="form-control" placeholder="Name" required>
-                                    </div>
-                                    <div class="col-md-6 margin-b-20">
-                                        <input type="email" class="form-control" placeholder="Email" required>
-                                    </div>
-                                    <div class="col-md-12 margin-b-20">
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                    </div>
-                                    <div class="col-md-12 margin-b-20">
-                                        <textarea class="form-control" rows="6" placeholder="Message" required></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary">Send Message</button>
-                                    </div>
+                            {% if success %}
+                                <div class="alert alert-success" role="alert">
+                                    Mesajınız başarıyla gönderildi. Teşekkür ederim!
                                 </div>
-                            </form>
+                            {% else %}
+                                <form method="POST" action="{% url 'contact' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6 margin-b-20">
+                                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                        </div>
+                                        <div class="col-md-6 margin-b-20">
+                                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                        </div>
+                                        <div class="col-md-12 margin-b-20">
+                                            <input type="text" name="subject" class="form-control" placeholder="Subject">
+                                        </div>
+                                        <div class="col-md-12 margin-b-20">
+                                            <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            {% endif %}
                             <!-- End Contact Form -->
                         </div>
                     </div>
