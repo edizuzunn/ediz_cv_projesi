@@ -22,6 +22,12 @@ def index(request):
     about_myself_welcome = get_general_setting('about_myself_welcome')
     about_myself_footer = get_general_setting('about_myself_footer')
 
+    experiences = Experience.objects.all()
+    educations = Education.objects.all()
+    skills = Skill.objects.all()
+    projects = Project.objects.all()
+    languages = Language.objects.all()
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
@@ -31,6 +37,11 @@ def index(request):
         'home_banner_description': home_banner_description,
         'about_myself_welcome': about_myself_welcome,
         'about_myself_footer': about_myself_footer,
+        'experiences': experiences,
+        'educations': educations,
+        'skills': skills,
+        'projects': projects,
+        'languages': languages,
     }
     return render(request, 'index.html', context=context)
 

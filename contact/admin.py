@@ -22,3 +22,53 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
     class Meta:
         model = ContactMessage
+
+
+@admin.register(Experience)
+class ExperienceAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'company', 'date_range', 'order']
+    search_fields = ['title', 'company']
+    list_editable = ['order']
+
+    class Meta:
+        model = Experience
+
+
+@admin.register(Education)
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'school', 'department', 'date_range', 'order']
+    search_fields = ['school', 'department']
+    list_editable = ['order']
+
+    class Meta:
+        model = Education
+
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'percentage', 'order']
+    search_fields = ['name']
+    list_editable = ['percentage', 'order']
+
+    class Meta:
+        model = Skill
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'github_url', 'order']
+    search_fields = ['title', 'description']
+    list_editable = ['order']
+
+    class Meta:
+        model = Project
+
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'level', 'is_highlighted', 'order']
+    search_fields = ['name']
+    list_editable = ['level', 'is_highlighted', 'order']
+
+    class Meta:
+        model = Language
